@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prob 8</title>
+</head>
+<body>
+	<script>
+
+	/*
+		8. Write a function which takes no input and returns an array
+		of 10 distinct randomly generated integers between 1 and 100.
+
+	-> [48, 5, 32, 2, 10, 11, 34, 95, 82, 93] (good!)
+	-> [1, 1, 24, 63, 45, 84, 17, 11, 59, 13] (bad - duplicated number)
+
+	for 0 - 9
+	var out = []
+	if(index of out not -1) //if the number isn't already there
+	out.push(math.random(1,100))
+
+	*/
+
+	function randInts(){
+		var out = [];
+		for(var i = 0; i < 10; i++){
+			rand = Math.floor(Math.random()*100)
+			if(out.indexOf(rand) === -1){
+				out.push(rand);
+			}
+		}
+		return out;
+	}
+
+	console.log(randInts());
+
+	</script>
+</body>
+</html>

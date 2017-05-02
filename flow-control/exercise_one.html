@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript | Flow | One</title>
+</head>
+<body>
+   <div id="output"></div>
+    <script>
+        /*
+            TODO: Right now this script console.logs multiple results for some numbers. (Try putting in "40"). Fix it so that for each temperature there is only one result.
+
+            TODO: This script doesn't work properly for the temperature "70". Fix it so that it works well for all temperatures.
+        */
+
+        var input_num = prompt("What's the temperature?");
+
+        if (input_num < 30) {
+            console.log("It's really cold.");
+        } else if (input_num < 50) {
+            console.log("It's pretty chilly.");
+        } else if (input_num < 70) {
+            console.log("It's warm.");
+        } else {
+            console.log("It's hot!");
+        };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//EXAMPLE:
+
+        var input_num = prompt("What's your speed?");
+
+        if (input_num < 30) {
+            console.log("Slow.");
+        } else if (input_num < 50) {
+            console.log("Safe");
+        } else if (input_num < 70) {
+            console.log("Cruising");
+        } else if (input_num > 70) { //focus here
+            console.log("Slow down");
+        };
+
+    </script>
+</body>
+</html>

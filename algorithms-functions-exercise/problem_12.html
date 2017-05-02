@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prob 12</title>
+</head>
+<body>
+	<script>
+
+	/*
+		12. Write a program to count the occurrences of all letter pairs in a sample of text
+		(like the first paragraph of the Constitution).
+		Disregard differences between lower and upper case letters.
+		Output the 10 most frequent letter pairs, in order by percent of total.
+		Your program should correctly process situations
+		where the input string is empty or where less than 10 pairs occur.
+
+			Example output:
+			th 2.37%
+			in 2.20%
+			fj 2.00%
+
+
+			split the string
+			go through that array
+			for every two elements
+				join them in new variable
+				push that variable to a new object of letter pairs
+
+			pairCounter
+
+
+			for every letter pair
+			create counter
+
+	*/
+		//so broken
+		// function keyCounter(arr, value){ //takes in the object and a letter pair, returns %
+		// 	counter = 0;
+		// 	for(var i = 0; i < arr.length; i++){
+		// 		if(arr[i] = value){
+		// 			counter += 1;
+		// 		}
+		// 	}
+		// 	return (counter - arr.length)  * .01 //returns percent
+		// }
+
+		//---------------------------------------------//---------------------------------------------
+
+		function pairCounter(str){
+			arr = []
+			for(var i = 0; i < str.length; i++){
+				if(i % 2 === 0){
+					arr.push(str.substring(i - 2, i))
+				}
+			}
+			return arr
+		}
+
+		console.log(pairCounter("We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America."))
+
+
+	</script>
+</body>
+</html>

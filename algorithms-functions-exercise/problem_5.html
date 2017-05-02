@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prob 5</title>
+</head>
+<body>
+	<script>
+
+	/*
+		5. Write function that translates a text to Pig Latin, and another that translates back.
+		English is translated to Pig Latin by taking the first letter of every word,
+		moving it to the end of the word and adding "ay".
+
+		"The quick brown fox" -> "Hetay uickqay rownbay oxfay".
+
+		//pig latin
+
+		split string on space
+		becomes array [The,quick,brown,fox]
+		step through the array
+			variable to store first letter --> firstChar
+			variable to store rest of word --> nextChars
+			variable to store "ay" --> ay
+			variable to store empty array [] --> outArr
+		for every index, index.substring for chars after first letter
+			**arr[i].substring(1,arr[i].length)**
+			nextChars = arr[i].substring(1,arr[i].length) //??
+			firstChar = arr[i][0]     // ??
+		newWord = nextChars + firstChar + ay
+		outArr.push (newWord);
+
+		//reversing pig latin
+
+		split string
+		for index in that array
+		split each string (arr[i]) at ay
+
+
+	*/
+
+	function pigLatin(str){
+		var firstChar;
+		var nextChars;
+		var ay = "ay";
+		var out = [];
+		var arr = str.split(" ");
+		for(var i = 0; i < arr.length; i++){
+			firstChar = arr[i][0];
+			nextChars = arr[i].substring(1,(arr[i].length));
+			var newWord = nextChars + firstChar + ay;
+			out.push(newWord);
+		}
+		return out.join(" ");
+	}
+
+	//"The quick brown fox" -> "Hetay uickqay rownbay oxfay".
+
+		function toEnglish(str){
+		var firstChar;
+		var nextChars;
+		var out = [];
+		var arr = str.split(" ");
+		for(var i = 0; i < arr.length; i++){
+			firstChar = (arr[i].substring((arr[i].length - 2), (arr[i].length - 3)));
+			nextChars = arr[i].substring((arr[i].length - 3), 0);
+			var newWord = firstChar + nextChars;
+			out.push(newWord);
+		}
+		return out.join(" ");
+	}
+
+
+
+
+	console.log(pigLatin("The quick brown fox"));
+	console.log(toEnglish("Hetay uickqay rownbay oxfay"));
+
+
+
+	</script>
+</body>
+</html>

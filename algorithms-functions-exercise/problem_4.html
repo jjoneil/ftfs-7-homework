@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prob 4</title>
+</head>
+<body>
+	<script>
+
+	/*
+		4. Write a function which takes an array of integers and returns an array with any duplicate integers removed.
+		[1,1,2,3,1,2,3] -> [1,2,3]
+		[1,4,4,4,2,2,4,4,4] -> [1,4,2]
+	*/
+
+	//take in array
+	//new empty array
+	//step through
+	//if prev num === current num
+	//	remove current num
+
+	function removeDupes(arr){
+			var outArr = [] //put non dupe values
+			for(var i = 0; i < arr.length; i++){
+				if(outArr.indexOf(arr[i]) == -1){//if value in arr !exist
+					outArr.push(arr[i]);//put that in the new array
+				}
+			}
+			return outArr;
+		}
+
+	console.log(removeDupes([1,1,2,3,1,2,3]));
+	console.log(removeDupes([1,4,4,4,2,2,4,4,4]));
+
+	</script>
+</body>
+</html>

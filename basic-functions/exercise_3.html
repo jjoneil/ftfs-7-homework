@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Functions! (Three)</title>
+</head>
+<body>
+	<script>
+		/*
+			Two uncompleted functions are below.
+			Make it so that all of the tests print "true" (without changing the tests).
+		*/
+
+		function square(a) {
+			squ = a * a;
+			return squ;
+		}
+
+		function min (a, b) {
+			var low = 0;
+			if(a && b){
+				low = Math.min(a,b);
+			}
+			return low;
+		}
+
+		// Test One
+		console.log(5 * 5 === square(5));
+		console.log(1 * 1 === square(1));
+
+		// Test Two
+		console.log(min(5, 2) === 2);
+		console.log(min(3, 5) === 3);
+		console.log(min(4, -4) === -4);
+		console.log(min(-2, 5) === -2);
+		console.log(min(0, 0) === 0);
+	</script>
+</body>
+</html>

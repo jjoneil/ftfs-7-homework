@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prob 11</title>
+</head>
+<body>
+	<script>
+		/*
+		11. One way of encoding a message is called a "square code". Given a message like:
+
+			"Have a nice day!"
+
+			We determine an appropriate size
+			of a square or rectangle to contain this message without spaces like so:
+
+			have
+			anic
+			eday
+			!
+
+			//
+			index concatenated with value 4 indices away, add space
+			//
+
+			We then read the square in columns, which gives us our encoded message:
+
+			hae! and via ecy
+
+			Write two functions, called encodeSquare and decodeSquare.
+			encodeSquare should be able to encrypt any arbitrary string,
+			and decodeSquare should be able to unencrypt any arbitrary encoded string.
+			The unencrypted string will have no spaces, and that's ok.
+
+
+			encodeSquare
+			split string
+			join string
+			get string .length
+				every nth character (character at Math.floor(string.length / 3))
+				use substr here?
+			insert line break
+
+					.splice(index, 0, item)
+
+			return string
+
+		for the string
+			var for square size
+			one var for first character
+			another var for character to join to it
+			set first var immediately
+			set next one
+
+
+
+
+		*/
+
+		function encodeSquare(str){
+			arr = str.split("") //now each letter is an element, includeing spaces
+			firstLetter = arr[0]
+			nextLetter = ""
+			word = ""
+			codeLength = parseInt(arr.length / 3)
+			for(var i = 0; i < arr.length; i++){
+				if(arr[i] === " "){
+					arr.splice(arr.indexOf(arr[i]), 1);
+				}
+				if (i % codeLength === 0){
+					nextLetter = arr[i]
+					word += nextLetter
+				}
+			}
+
+			return word; //every character is element of the array, minus spaces
+		}//end of function
+
+		//must now concatenate letters at an index, plus the index (x amount) away based on the array size
+
+		// var nice = "Have a nice day!"
+		// console.log(nice.split(""));
+
+		console.log(encodeSquare("Have a nice day!"));
+		console.log(encodeSquare("the jewels are hidden inside the house"));
+
+
+
+	</script>
+</body>
+</html>

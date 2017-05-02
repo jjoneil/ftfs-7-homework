@@ -1,0 +1,95 @@
+#2
+for(var i = 1; i <= 100; i++){
+	if(i % 3 === 0){
+    	console.log("fizz");
+    }
+  	else if(i % 5 === 0){
+    	console.log("buzz");
+    } else {
+    	console.log(i);
+    }
+
+}
+
+
+
+#4
+sum = 0;
+for (var i = 0; i < 1500; i++) {
+    if (i % 3 == 0 && i % 5 == 0) {
+        sum += i;
+    }
+}
+console.log(sum);
+
+#5
+var fib1 = 1;
+var fib2 = 2;
+var sum = 0;
+while (fib1 + fib2 < 2000000) {
+    var newfib = fib1 + fib2;
+    if (newfib % 2 === 1) {
+        sum += newfib;
+    }
+    fib1 = fib2;
+    fib2 = newfib;
+}
+console.log(sum);
+
+#6
+var min = 0;
+var max = 100;
+var done = false;
+while (! done && max > min) {
+    guess = Math.floor((max + min) / 2);
+    var response = prompt("Is " + guess + " to high or low?");
+    if (response === "Y") {
+        done = true;
+        alert("YAY");
+    } else if (response === "H") {
+        max = guess;
+    } else if (response === "L") {
+        min = guess - 1; //???
+    } else {
+        alert("Not an answer?");
+    }
+}
+
+extra's
+
+
+
+Extra problems for EJS Ch. 2 -- "Program Structure"
+1. Write a program which prints out a times table for up to 12x12. Use nested for-loops to complete this program. Your output must exactly match the following. Note that "\t" will print a "tab" character.
+
+1   2   3   4   5   6   7   8   9   10  11  12
+1   1   2   3   4   5   6   7   8   9   10  11  12
+2   2   4   6   8   10  12  14  16  18  20  22  24
+3   3   6   9   12  15  18  21  24  27  30  33  36
+4   4   8   12  16  20  24  28  32  36  40  44  48
+5   5   10  15  20  25  30  35  40  45  50  55  60
+6   6   12  18  24  30  36  42  48  54  60  66  72
+7   7   14  21  28  35  42  49  56  63  70  77  84
+8   8   16  24  32  40  48  56  64  72  80  88  96
+9   9   18  27  36  45  54  63  72  81  90  99  108
+10  10  20  30  40  50  60  70  80  90  100 110 120
+11  11  22  33  44  55  66  77  88  99  110 121 132
+12  12  24  36  48  60  72  84  96  108 120 132 144
+
+2. Use prompt() to ask the user for their name, then print each letter of their name on a new line. Example:
+
+What is your name? [ Erty ]
+E
+r
+t
+y
+
+    3. Prompt the user for a width and a height, then draw a box with that width and height. Print the area of the box centered (As best you can) inside the box.
+
+    What width? [ 3 ]
+    What height? [ 4 ]
+      +---+
+      |   |
+      | 12|
+      |   |
+      +---+

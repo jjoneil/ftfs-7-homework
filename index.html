@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Point of Sale</title>
+</head>
+<body>
+	<script>
+		/*
+		Below is a basic Point of Sale system that we might
+		see in a shop or restaurant. Some of the functions
+		aren't yet complete. Your job is to complete them
+		so we can sell items to customers!
+		*/
+
+		/*
+		First, let's set up some demo data for us
+		to use for testing
+		*/
+		function Item(name, price, quantity, id) {
+			this.name = name;
+			this.price = price;
+			this.quantity = quantity;
+			this.id = id;
+		}
+
+		var inventory = [
+			new Item(
+				"Gumball", //this.name
+				25, //this.price
+				30, //this.quantity
+				12333 //this.id
+			),
+			new Item(
+				"Chocolate Bar",
+				100,
+				40,
+				34223
+			),
+			new Item(
+				"Fancy Chocolate Bar",
+				300,
+				10,
+				8932
+			)
+		];
+
+		function Customer(name, cart) {
+			this.name = name;
+			this.cart = cart;
+		}
+
+		var customers = [
+			new Customer(
+				"erty", //this.name
+				[
+					12333, //this.cart
+					12333,
+					34223
+				]
+			),
+			new Customer(
+				"john",
+				[
+					8932,
+					12333
+				]
+			)
+		];
+
+		//console.log(customers);
+
+		var totalMoneyMade = 32923;
+
+		/*
+			Todo: Complete the following functions
+		*/
+
+		function getItemByID(itemID) {
+			// todo: take in item id as a number
+			// and return a reference to that item
+			// in the inventory
+
+			// go through each item in the inventory
+			for (var i = 0; i < inventory.length; i++) {
+				// if that item's id is itemID, return the item
+				if (inventory[i].id === itemID) {
+					return inventory[i];
+				}
+			}
+			return null;
+		}
+
+		// tests!
+		// console.log(getItemByID(0) === null)
+		// console.log(getItemByID(12333).price === 25);
+		// console.log(getItemByID(12333).name === "Gumball");
+
+
+		function getSubTotalForCustomer(customerObj) {
+			// todo: take in a reference to a customer object
+			// and return the total price of all the items
+			// in their cart
+			//console.log(customerObj.cart); //item id's
+			sum = 0;
+			for(var i = 0; i < customerObj.cart.length; i++){
+				sum += getItemByID(customerObj.cart[i]).price;
+			}
+			return sum;
+		}
+
+		// console.log(
+		// 	getSubTotalForCustomer(customers[0]) === 150
+		// );
+		// console.log(
+		// 	getSubTotalForCustomer(customers[1]) === 325
+		// );
+
+		function markItemSold(itemObj) {
+			// todo: take in an item reference, and update
+			// the new quantity of that item
+
+			itemObj.quantity -= 1;
+
+			//return itemObj.quantity; //returns quantity
+
+		}
+
+		//texting markItemSold
+		// var quantityBefore = inventory[0].quantity;
+		// markItemSold(inventory[0]);
+		// console.log((quantityBefore - 1) === inventory[0].quantity);
+		// //
+
+		function emptyCart(customerObj) {
+			// todo: take in a customer object
+			// and modify that customer so that their
+			// cart is empty
+			customerObj.cart = [];
+		}
+
+		//tests
+		// emptyCart(customers[0]);
+		// console.log(customers[0].cart.length === 0);
+
+		function checkOutCustomer(customerObj) {
+			//todo: take in a customer object, compute the total
+			// cost of the things in their cart, add that to the
+			// totalMoneyMade, update our inventory,
+			// and empty that customer's cart
+
+			var subtotal = getSubTotalForCustomer(customerObj);
+			totalMoneyMade += subtotal;
+
+			for(var i = 0; i < customerObj.cart.length; i++){
+				var item = getItemByID(customerObj.cart[i])
+				markItemSold(item);
+			}
+
+			emptyCart(customerObj);
+			return customerObj;
+		}
+
+		console.log(checkOutCustomer(customers[0]));
+		console.log(totalMoneyMade + "look here!");
+
+
+		function createNewCustomer(name) {
+			// todo: add a new customer to the system
+			// with an empty cart and name provided
+			// return a reference to that customer
+			customers.push( new Customer(
+				this.name,
+				[]
+			))
+			return customers[customers.length - 1];
+		}
+		console.log(createNewCustomer("steve"));
+
+		function createNewItem(name, price, id, quantity) {
+			// todo: add a new item to the system with
+			// the name, price, quantity, and id provided
+			// return a reference to that item
+			inventory.push( new Item(
+				this.name,
+				this.price,
+				this.id,
+				this.quantity
+				))
+			return inventory[inventory.length - 1];
+		}
+
+		console.log(createNewItem("cheese"));
+
+	</script>
+</body>
+</html>

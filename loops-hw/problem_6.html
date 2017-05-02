@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prob_6</title>
+</head>
+<body>
+	<script>
+
+	//solution
+	var min = 0;
+	var max = 100;
+	var done = false;
+	while (! done && max > min) {
+	    guess = Math.floor((max + min) / 2);
+	    var response = prompt("Is " + guess + " to high or low?");
+	    if (response === "Y") {
+	        done = true;
+	        alert("YAY");
+	    } else if (response === "H") {
+	        max = guess;
+	    } else if (response === "L") {
+	        min = guess - 1; //???
+	    } else {
+	        alert("Not an answer?");
+	    }
+	}
+
+
+	</script>
+</body>
+</html>

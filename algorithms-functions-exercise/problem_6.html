@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prob 6</title>
+</head>
+<body>
+	<script>
+
+	/*
+		6. Write a function which takes in two arrays and determines
+		if they contain the same number of the same values.
+
+		[], [] -> true
+		[2, 3, 4], [1, 2, 3] -> false
+		["a", "c", "b"], ["a", "b", "c"] -> true
+		[1, 1, 1], [1, 1, 1, 1] -> false
+
+		take in two arrays
+
+		sort both
+		arr.sort(function(a, b){return a-b}
+		arr2.sort(function(a, b){return a-b}
+
+
+
+		one loop to step through both (works somehow???)
+		if the index of arr1[i] and arr2[i] is not negative 1
+			return false
+		otherwise keep looin
+		return true
+	*/
+
+	function isSame(arr, arr2){
+		arr.sort(function(a, b){return a-b});
+		arr2.sort(function(a, b){return a-b});
+		for(var i = 0; i < arr.length; i++){
+			if(arr.indexOf(arr2[i]) === -1){
+				return false;
+			}
+		}
+		return true;
+	}
+
+	console.log(isSame([2, 3, 4],[1, 2, 3]));
+	console.log(isSame(["a", "c", "b"],["a", "b", "c"]));
+
+	</script>
+</body>
+</html>

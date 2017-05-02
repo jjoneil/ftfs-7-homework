@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>`
+<body>
+	<script>
+		/*
+			Exercise 3
+
+			From problem 2, EJS Ch 3. page 56
+
+			Write the "stack frame" at each call of the following
+			recursive function. For example, if I call isEven(7),
+			the first two frames will be
+			num = 7
+			num = 5
+
+			Then, write out the return values at each level of the
+			stack as it unrolls.
+		*/
+
+		function isEven(num) {
+			if (num === 0) {
+				return true;
+			} else if (num === 1) {
+				return false;
+			} else{
+				return isEven(num - 2);
+			}
+		}
+
+		isEven(8);
+	</script>
+</body>
+</html>

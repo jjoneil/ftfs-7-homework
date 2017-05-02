@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>calvinball_2</title>
+</head>
+<body>
+	<script>
+		/*
+		            Calvinball Rules:
+
+                1. A player's score is reduced by 50 is they have an exercise ball.
+                2. a player's score is multiplied by 3 if they have had coffee, but reduced by 100 if they had tea.
+                3. A player gets an extra play if they are left handed.
+                4. A player's score is doubled if they are holding the lightsaber, and yelling "I am the apple", but halved if they aren't yelling.
+                5. if player's battery is less than 50%, their score is reduced by the percentage of their battery. If above, they get percentage added to score.
+        */
+
+
+
+        		//player 1
+        		var score = 100;
+		        var drink = "tea";
+		        var left_handed = true;
+		        var lightsaber = false;
+		        var yelling = false;
+		        var battery = 97;
+		        var exercise_ball = true;
+
+
+		        // if(exercise_ball){
+		        // 	score -= 50;
+		        // }
+
+		        // if( drink === "coffee"){
+		        // 	score = score * 3;
+		        // } else if (drink === "tea"){
+		        // 	score -= 100;
+		        // }
+
+		        if(battery < 50){
+		        	score -=  score * (battery / 100);
+		        } else {
+		        	score += score * (battery / 100);
+		        }
+		        // } else if(battery )
+
+
+
+
+
+		        console.log(score);
+
+	</script>
+</body>
+</html>

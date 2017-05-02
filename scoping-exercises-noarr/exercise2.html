@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		/*
+			Exercise 2
+			How many different variables named "a" are created here?
+			Can you give each of them a new name while preserving the
+			functionality of this code?
+		*/
+
+		function createFunction() {
+			var inside = function () {
+				var b = "b";
+				return b;
+			};
+			return inside;
+		}
+		var func = createFunction();
+		console.log(func());
+
+
+		//3
+
+	</script>
+</body>
+
+</html>
